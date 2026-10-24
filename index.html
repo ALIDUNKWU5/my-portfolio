@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/ali5logo.jpg">
+    <title>ALI5 SOLUTIONS — Premium Web Developer & Digital Agency</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans, Inter, & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        midnight: '#0E0A24',
+                        deepslate: '#181240',
+                        cyanaccent: '#A78BFA',
+                        softwhite: '#F6F4FF',
+                        coolgray: '#B0A9D6',
+                        subtleborder: '#2D2566',
+                        gold: '#F5C451',
+                        slate: {
+                            50: '#FAF8FF', 100: '#F3EFFF', 200: '#E2DAFF', 300: '#D0C5F7',
+                            400: '#B0A9D6', 500: '#6F68A0', 600: '#5B5485', 700: '#3F3768',
+                            800: '#181240', 900: '#1A1042', 950: '#0E0A24'
+                        },
+                        cyan: { 500: '#A78BFA', 600: '#6D28D9' },
+                        teal: { 500: '#8B5CF6' }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-[#0E0A24] dark:text-[#F6F4FF] antialiased selection:bg-cyanaccent selection:text-midnight">
+
+   <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-[#0E0A24]/90 backdrop-blur-md border-b border-slate-200 dark:border-[#2D2566] transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo Only -->
+            <a href="index.html" class="flex items-center group">
+                <div class="h-12 flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <img src="./images/ali5logo.jpg" alt="ALI5 SOLUTIONS logo" class="h-10 sm:h-12 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span class="font-heading font-extrabold text-xl tracking-tight text-slate-900 dark:text-softwhite" style="display:none">ALI5 SOLUTIONS</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600 dark:text-coolgray">
+                <a href="index.html" class="text-slate-900 dark:text-white transition-colors hover:text-cyanaccent">Home</a>
+                <a href="about.html" class="transition-colors hover:text-cyanaccent">About</a>
+                <a href="services.html" class="transition-colors hover:text-cyanaccent">Services</a>
+                <a href="portfolio.html" class="transition-colors hover:text-cyanaccent">Portfolio</a>
+                <a href="contact.html" class="transition-colors hover:text-cyanaccent">Contact</a>
+            </nav>
+
+            <!-- Theme Switcher & CTA Button -->
+            <div class="hidden md:flex items-center gap-4">
+                <button id="theme-toggle" class="p-2.5 rounded-xl bg-slate-200 dark:bg-deepslate border border-slate-300 dark:border-subtleborder text-slate-700 dark:text-coolgray hover:text-cyanaccent transition-all flex items-center gap-2" title="Toggle Theme">
+                    <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
+                    <i data-lucide="moon" class="w-4 h-4 block dark:hidden text-slate-700"></i>
+                    <span class="text-xs font-mono font-semibold hidden lg:inline">
+                        <span class="hidden dark:inline">LIGHT</span>
+                        <span class="inline dark:hidden">DARK</span>
+                    </span>
+                </button>
+
+                <a href="contact.html" class="px-5 py-2.5 rounded-xl bg-cyanaccent text-midnight font-bold text-sm hover:bg-cyanaccent/90 transition-all shadow-lg shadow-cyanaccent/10">
+                    Let's Work Together
+                </a>
+            </div>
+
+            <!-- Mobile Actions -->
+            <div class="flex items-center gap-2 md:hidden">
+                <button id="mobile-theme-toggle" class="p-2 rounded-xl bg-slate-200 dark:bg-deepslate text-slate-700 dark:text-coolgray">
+                    <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-amber-400"></i>
+                    <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+                </button>
+                <button id="menu-btn" class="p-2 text-slate-600 dark:text-coolgray hover:text-slate-900 dark:hover:text-white focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600 dark:text-coolgray">
+                <a href="index.html" class="text-slate-900 dark:text-softwhite transition-colors hover:text-cyanaccent">Home</a>
+                <a href="about.html" class="transition-colors hover:text-cyanaccent">About</a>
+                <a href="services.html" class="transition-colors hover:text-cyanaccent">Services</a>
+                <a href="portfolio.html" class="transition-colors hover:text-cyanaccent">Portfolio</a>
+                <a href="contact.html" class="transition-colors hover:text-cyanaccent">Contact</a>
+            </nav>
+
+            <!-- Theme Switcher & CTA Button -->
+            <div class="hidden md:flex items-center gap-4">
+                <button id="theme-toggle" class="p-2.5 rounded-xl bg-slate-200 dark:bg-deepslate border border-slate-300 dark:border-subtleborder text-slate-700 dark:text-coolgray hover:text-cyanaccent transition-all flex items-center gap-2" title="Toggle Theme">
+                    <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
+                    <i data-lucide="moon" class="w-4 h-4 block dark:hidden text-slate-700"></i>
+                    <span class="text-xs font-mono font-semibold hidden lg:inline">
+                        <span class="hidden dark:inline">LIGHT</span>
+                        <span class="inline dark:hidden">DARK</span>
+                    </span>
+                </button>
+
+                <a href="contact.html" class="px-5 py-2.5 rounded-xl bg-gold text-midnight font-bold text-sm hover:bg-gold/90 transition-all shadow-lg shadow-gold/10">
+                    Let's Work Together
+                </a>
+            </div>
+
+            <!-- Mobile Actions -->
+            <div class="flex items-center gap-2 md:hidden">
+                <button id="mobile-theme-toggle" class="p-2 rounded-xl bg-slate-200 dark:bg-deepslate text-slate-700 dark:text-coolgray">
+                    <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-amber-400"></i>
+                    <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+                </button>
+                <button id="menu-btn" class="p-2 text-slate-600 dark:text-coolgray hover:text-slate-900 dark:hover:text-softwhite focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-100 dark:bg-deepslate border-b border-slate-200 dark:border-subtleborder px-6 py-4 space-y-3">
+            <a href="index.html" class="block text-slate-900 dark:text-softwhite font-medium py-1">Home</a>
+            <a href="about.html" class="block text-slate-600 dark:text-coolgray hover:text-cyanaccent font-medium py-1">About</a>
+            <a href="services.html" class="block text-slate-600 dark:text-coolgray hover:text-cyanaccent font-medium py-1">Services</a>
+            <a href="portfolio.html" class="block text-slate-600 dark:text-coolgray hover:text-cyanaccent font-medium py-1">Portfolio</a>
+            <a href="contact.html" class="block text-slate-600 dark:text-coolgray hover:text-cyanaccent font-medium py-1">Contact</a>
+            <div class="pt-3 border-t border-slate-200 dark:border-subtleborder">
+                <a href="contact.html" class="block text-center w-full py-2.5 rounded-xl bg-gold text-midnight font-bold text-sm">
+                    Let's Work Together
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative overflow-hidden py-20 lg:py-32">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyanaccent/10 dark:bg-cyanaccent/5 blur-[120px] rounded-full pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Left Column -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-200 dark:bg-deepslate border border-slate-300 dark:border-subtleborder text-cyan-600 dark:text-cyanaccent text-xs font-semibold tracking-wider uppercase font-mono">
+                        <span class="w-2 h-2 rounded-full bg-cyanaccent animate-pulse"></span>
+                        WEB DEVELOPMENT • DIGITAL EXPERIENCES
+                    </div>
+
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-slate-900 dark:text-softwhite">
+                        We Build <span class="text-cyan-600 dark:text-cyanaccent">Modern Websites</span> That Turn Ideas Into <span class="text-cyan-600 dark:text-cyanaccent">Digital Experiences.</span>
+                    </h1>
+
+                    <p class="text-lg text-slate-600 dark:text-coolgray font-body max-w-2xl leading-relaxed">
+                        We design and develop responsive, high-performing websites that help businesses establish their online presence, showcase their products, and turn visitors into customers.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="portfolio.html" class="px-7 py-3.5 rounded-xl bg-gold text-midnight font-bold flex items-center gap-2 hover:bg-gold/90 transition-all shadow-xl shadow-gold/15">
+                            Explore Our Projects <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="contact.html" class="px-7 py-3.5 rounded-xl bg-slate-200 dark:bg-deepslate border border-slate-300 dark:border-subtleborder text-slate-900 dark:text-softwhite font-semibold hover:border-cyanaccent/50 transition-all">
+                            Let’s Discuss Your Project
+                        </a>
+                    </div>
+
+                    <div class="pt-4 flex items-center gap-6 text-sm text-slate-600 dark:text-coolgray border-t border-slate-200 dark:border-subtleborder/60">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-600 dark:text-cyanaccent"></i>
+                            <span>Available for selected projects</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-cyan-600 dark:text-cyanaccent"></i>
+                            <span>Clean, Maintainable Code</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Profile Photo Container -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -inset-1.5 bg-gradient-to-r from-cyanaccent to-violet-600 rounded-3xl blur-xl opacity-20 dark:opacity-30"></div>
+                        
+                        <div class="relative bg-white dark:bg-deepslate border border-slate-200 dark:border-subtleborder rounded-3xl p-3 shadow-2xl">
+                            <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-slate-100 dark:bg-midnight relative flex items-center justify-center border border-slate-200 dark:border-subtleborder/50">
+                                <img src="./images/profile.jpg" alt="ALI5 SOLUTIONS Profile" class="w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback-profile').style.display='flex';">
+                                
+                                <div id="fallback-profile" class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-gradient-to-b from-slate-100 to-slate-200 dark:from-deepslate dark:to-midnight" style="display: none;">
+                                    <div class="w-20 h-20 rounded-2xl bg-cyanaccent/10 border border-cyanaccent/30 flex items-center justify-center text-cyanaccent mb-4">
+                                        <i data-lucide="user" class="w-10 h-10"></i>
+                                    </div>
+                                    <h3 class="font-heading font-bold text-slate-900 dark:text-softwhite text-lg">Your Photo Here</h3>
+                                    <p class="text-xs text-slate-500 dark:text-coolgray mt-1 max-w-[220px]">
+                                        Place your photo in <code class="text-cyan-600 dark:text-cyanaccent bg-slate-200 dark:bg-midnight px-1 py-0.5 rounded">images/profile.jpg</code>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-3 p-3 bg-slate-100 dark:bg-midnight/80 rounded-xl border border-slate-200 dark:border-subtleborder flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
+                                    <span class="text-xs font-semibold text-slate-900 dark:text-softwhite">Ali5 Lead Developer</span>
+                                </div>
+                                <span class="text-[11px] text-cyan-600 dark:text-cyanaccent font-mono">React / WordPress / PHP / Shopify</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT PREVIEW -->
+    <section id="about" class="py-20 bg-slate-100 dark:bg-deepslate/40 border-t border-b border-slate-200 dark:border-subtleborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center space-y-4">
+                <h2 class="text-xs font-bold tracking-widest text-cyan-600 dark:text-cyanaccent uppercase">About ALI5 SOLUTIONS</h2>
+                <h3 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-softwhite">Building Digital Solutions For Real Business Needs</h3>
+                <p class="text-slate-600 dark:text-coolgray text-base leading-relaxed">
+                    We specialize in crafting websites that solve real business challenges. Whether you need a professional corporate presence, an engaging e-commerce store, a standout portfolio, or a custom landing page, every project is engineered with high usability, clean typography, and robust performance.
+                </p>
+                <div class="pt-2">
+                    <a href="about.html" class="inline-flex items-center gap-2 text-cyan-600 dark:text-cyanaccent text-sm font-bold hover:underline">
+                        Learn More About Us & Our Work <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNOLOGIES & CMS EXPERTISE -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-xs font-bold tracking-widest text-cyan-600 dark:text-cyanaccent uppercase">Tech Stack & Platforms</h2>
+                <h3 class="font-heading text-3xl font-bold text-slate-900 dark:text-softwhite">The Tools Behind Our Work</h3>
+                <p class="text-slate-600 dark:text-coolgray text-sm">Tested technologies and content management systems utilized to bring your ideas to life.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Group 1 -->
+                <div class="bg-white dark:bg-deepslate border border-slate-200 dark:border-subtleborder rounded-2xl p-6 space-y-4 hover:border-cyanaccent/40 transition-all shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-cyanaccent/10 text-cyan-600 dark:text-cyanaccent flex items-center justify-center">
+                        <i data-lucide="code-2" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-slate-900 dark:text-softwhite">Frontend Development</h4>
+                    <ul class="space-y-2 text-sm text-slate-600 dark:text-coolgray">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyanaccent"></i> HTML5 & CSS3</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyanaccent"></i> JavaScript (ES6+)</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyanaccent"></i> React & TypeScript</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyanaccent"></i> Tailwind CSS</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyanaccent"></i> Next.js & Bootstrap</li>
+                    </ul>
+                </div>
+
+                <!-- Group 2 -->
+                <div class="bg-white dark:bg-deepslate border border-slate-200 dark:border-subtleborder rounded-2xl p-6 space-y-4 hover:border-cyanaccent/40 transition-all shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-cyanaccent/10 text-cyan-600 dark:text-cyanaccent flex items-center justify-center">
+                        <i data-lucide="layout" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-slate-900 dark:text-softwhite">CMS & Platforms</h4>
+                    <ul class="space-y-2 text-sm text-slate-600 dark:text-coolgray">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyanaccent"></i> WordPress / WooCommerce</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyanaccent"></i> Shopify Stores</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyanaccent"></i> Webflow & Wix</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyanaccent"></i> Joomla & Drupal</li>
+                    </ul>
+                </div>
+
+                <!-- Group 3 -->
+                <div class="bg-white dark:bg-deepslate border border-slate-200 dark:border-subtleborder rounded-2xl p-6 space-y-4 hover:border-cyanaccent/40 transition-all shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-cyanaccent/10 text-cyan-600 dark:text-cyanaccent flex items-center justify-center">
+                        <i data-lucide="database" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-slate-900 dark:text-softwhite">Backend & Data</h4>
+                    <ul class="space-y-2 text-sm text-slate-600 dark:text-coolgray">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyanaccent"></i> PHP</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyanaccent"></i> Laravel Framework</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyanaccent"></i> Node.js & Express</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyanaccent"></i> MySQL Databases</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyanaccent"></i> REST APIs & Integration</li>
+                    </ul>
+                </div>
+
+                <!-- Group 4 -->
+                <div class="bg-white dark:bg-deepslate border border-slate-200 dark:border-subtleborder rounded-2xl p-6 space-y-4 hover:border-cyanaccent/40 transition-all shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-cyanaccent/10 text-cyan-600 dark:text-cyanaccent flex items-center justify-center">
+                        <i data-lucide="terminal" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-slate-900 dark:text-softwhite">Tools & Deployment</h4>
+                    <ul class="space-y-2 text-sm text-slate-600 dark:text-coolgray">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyanaccent"></i> Git & GitHub</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyanaccent"></i> Vite Build Tool</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyanaccent"></i> cPanel Hosting & FTP</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyanaccent"></i> Responsive & A11y Tools</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES PREVIEW -->
+    <section id="services" class="py-20 bg-slate-100 dark:bg-deepslate/30 border-t border-slate-200 dark:border-subtleborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-xs font-bold tracking-widest text-cyan-600 dark:text-cyanaccent uppercase">Core Offerings</h2>
+                <h3 class="font-heading text-3xl font-bold text-slate-900 dark:text-softwhite">Services Tailored For Your Growth</h3>
+                <p class="text-slate-600 dark:text-coolgray text-sm">Focused website development designed to establish credibility and drive engagement.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white dark:bg-midnight border border-slate-200 dark:border-subtleborder rounded-2xl p-8 hover:border-cyanaccent/50 transition-all group shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-cyanaccent/10 text-cyan-600 dark:text-cyanaccent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="globe" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-heading text-xl font-bold text-slate-900 dark:text-softwhite mb-2">Business Website Development</h4>
+                    <p class="text-slate-600 dark:text-coolgray text-sm leading-relaxed mb-6">
+                        Modern, responsive corporate websites, agency showcases, and professional portfolios built to make an unforgettable first impression on clients and partners.
+                    </p>
+                    <a href="services.html" class="inline-flex items-center gap-2 text-cyan-600 dark:text-cyanaccent text-sm font-semibold hover:underline">
+                        View Service Details <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white dark:bg-midnight border border-slate-200 dark:border-subtleborder rounded-2xl p-8 hover:border-cyanaccent/50 transition-all group shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-cyanaccent/10 text-cyan-600 dark:text-cyanaccent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-heading text-xl font-bold text-slate-900 dark:text-softwhite mb-2">E-commerce Development</h4>
+                    <p class="text-slate-600 dark:text-coolgray text-sm leading-relaxed mb-6">
+                        Fully functional online stores with streamlined product catalogs, secure checkout integration, category navigation, and mobile-first shopping experiences.
+                    </p>
+                    <a href="services.html" class="inline-flex items-center gap-2 text-cyan-600 dark:text-cyanaccent text-sm font-semibold hover:underline">
+                        View Service Details <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white dark:bg-midnight border border-slate-200 dark:border-subtleborder rounded-2xl p-8 hover:border-cyanaccent/50 transition-all group shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-cyanaccent/10 text-cyan-600 dark:text-cyanaccent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="file-text" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-heading text-xl font-bold text-slate-900 dark:text-softwhite mb-2">WordPress & CMS Development</h4>
+                    <p class="text-slate-600 dark:text-coolgray text-sm leading-relaxed mb-6">
+                        Customized content management systems on WordPress, Shopify, or Wix that empower your team to easily update content, publish blogs, and manage items independently.
+                    </p>
+                    <a href="services.html" class="inline-flex items-center gap-2 text-cyan-600 dark:text-cyanaccent text-sm font-semibold hover:underline">
+                        View Service Details <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white dark:bg-midnight border border-slate-200 dark:border-subtleborder rounded-2xl p-8 hover:border-cyanaccent/50 transition-all group shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-cyanaccent/10 text-cyan-600 dark:text-cyanaccent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="smartphone" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-heading text-xl font-bold text-slate-900 dark:text-softwhite mb-2">Landing Pages & Web Apps</h4>
+                    <p class="text-slate-600 dark:text-coolgray text-sm leading-relaxed mb-6">
+                        Conversion-focused campaign landing pages and interactive web applications designed for high user engagement, fast load times, and maximum conversion rates.
+                    </p>
+                    <a href="services.html" class="inline-flex items-center gap-2 text-cyan-600 dark:text-cyanaccent text-sm font-semibold hover:underline">
+                        View Service Details <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO — PROJECT SHOWCASE -->
+    <section id="portfolio" class="py-20 border-t border-slate-200 dark:border-subtleborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="space-y-3 mb-8">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-200 dark:bg-[#221B55] border border-slate-300 dark:border-[#2D2566] text-cyan-600 dark:text-cyanaccent text-[11px] font-mono font-semibold tracking-wider uppercase">
+                    <span class="w-1.5 h-1.5 rounded-full bg-cyanaccent"></span>
+                    SELECTED CLIENT WORK & CASE STUDIES
+                </div>
+                
+                <h3 class="font-heading text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-softwhite">
+                    Explore the Websites We Bring to Life<span class="text-cyan-600 dark:text-cyanaccent">.</span>
+                </h3>
+                
+                <p class="text-slate-600 dark:text-coolgray text-sm max-w-2xl leading-relaxed font-body">
+                    A curated showcase of bespoke corporate websites, robust e-commerce platforms, real estate portals, and custom web applications engineered with modern React, TypeScript, and Tailwind CSS.
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-10 pb-4 border-b border-slate-200 dark:border-subtleborder/50">
+                <div>
+                    <span class="text-[10px] font-mono font-bold tracking-widest text-slate-500 dark:text-slate-400 uppercase block mb-2">
+                        FILTER BY ARCHITECTURE CLASSIFICATION
+                    </span>
+                    <div class="flex flex-wrap gap-2" id="filter-buttons">
+                        <button onclick="filterProjects('all')" class="filter-btn active-filter px-3 py-1.5 rounded-md text-xs font-mono font-semibold uppercase transition-all bg-cyanaccent text-midnight">ALL PROJECTS</button>
+                        <button onclick="filterProjects('business')" class="filter-btn px-3 py-1.5 rounded-md text-xs font-mono font-semibold uppercase transition-all bg-slate-200 dark:bg-[#221B55] text-slate-700 dark:text-coolgray hover:text-cyanaccent">BUSINESS</button>
+                        <button onclick="filterProjects('ecommerce')" class="filter-btn px-3 py-1.5 rounded-md text-xs font-mono font-semibold uppercase transition-all bg-slate-200 dark:bg-[#221B55] text-slate-700 dark:text-coolgray hover:text-cyanaccent">E-COMMERCE</button>
+                        <button onclick="filterProjects('realestate')" class="filter-btn px-3 py-1.5 rounded-md text-xs font-mono font-semibold uppercase transition-all bg-slate-200 dark:bg-[#221B55] text-slate-700 dark:text-coolgray hover:text-cyanaccent">REAL ESTATE</button>
+                        <button onclick="filterProjects('automotive')" class="filter-btn px-3 py-1.5 rounded-md text-xs font-mono font-semibold uppercase transition-all bg-slate-200 dark:bg-[#221B55] text-slate-700 dark:text-coolgray hover:text-cyanaccent">AUTOMOTIVE</button>
+                    </div>
+                </div>
+
+                <div class="text-xs font-mono text-cyan-600 dark:text-cyanaccent font-semibold tracking-wider">
+                    SHOWING: <span id="project-count">4 OF 4</span> DEPLOYMENTS
+                </div>
+            </div>
+
+            <!-- BROWSER WINDOW PROJECT CARDS GRID -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="projects-grid">
+                
+                <!-- Project: Apex Luxury Estates -->
+                <div class="project-card realestate bg-white dark:bg-[#181240] border border-slate-200 dark:border-[#2D2566] rounded-2xl overflow-hidden shadow-xl flex flex-col">
+                    <div class="bg-slate-100 dark:bg-[#0E0A24] px-4 py-3 border-b border-slate-200 dark:border-[#2D2566] flex items-center justify-between">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+                        </div>
+                        <div class="bg-slate-200 dark:bg-[#221B55] text-slate-700 dark:text-coolgray text-[11px] font-mono px-4 py-1 rounded-md border border-slate-300 dark:border-subtleborder/50 flex items-center gap-2 max-w-xs truncate">
+                            <i data-lucide="lock" class="w-3 h-3 text-emerald-500 shrink-0"></i>
+                            <span class="truncate">https://apex-estates.ali5.digital/showcase</span>
+                        </div>
+                        <div class="w-12"></div>
+                    </div>
+                    <div class="aspect-[16/9] bg-slate-900 relative overflow-hidden group">
+                        <img src="./images/projects/project-03.jpg" alt="Apex Luxury Estates" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1000&q=80'">
+                        <div class="absolute top-3 left-3 flex items-center gap-2">
+                            <span class="bg-slate-900/90 text-white text-[10px] font-mono font-bold tracking-widest px-2.5 py-1 rounded uppercase backdrop-blur-sm">DEMO</span>
+                            <span class="bg-cyan-500/90 text-midnight text-[10px] font-mono font-bold tracking-widest px-2.5 py-1 rounded uppercase backdrop-blur-sm">REAL ESTATE</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-6">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-heading font-extrabold text-2xl text-slate-900 dark:text-softwhite">Apex Luxury Estates</h4>
+                                <span class="text-xs font-mono text-cyan-600 dark:text-cyanaccent font-semibold">EST. 2025</span>
+                            </div>
+                            <p class="text-slate-600 dark:text-coolgray text-sm leading-relaxed">
+                                High-end property platform with dynamic filtering, spatial 3D tour interfaces, dynamic floorplan switches, and ultra-smooth tactile transitions.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200 dark:border-[#2D2566] flex items-center justify-between font-mono text-xs font-bold">
+                            <a href="https://example.com/apex-luxury-estates" target="_blank" rel="noopener" class="px-4 py-2 rounded-lg bg-slate-200 dark:bg-[#221B55] text-slate-900 dark:text-softwhite hover:bg-slate-300 dark:hover:bg-[#2D2566] transition-colors flex items-center gap-1.5 uppercase">
+                                VIEW PROJECT →
+                            </a>
+                            <a href="https://example.com/apex-luxury-estates" target="_blank" rel="noopener" class="text-cyan-600 dark:text-cyanaccent hover:underline flex items-center gap-1.5 uppercase">
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> VISIT SITE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Veloce Performance Motors -->
+                <div class="project-card automotive bg-white dark:bg-[#181240] border border-slate-200 dark:border-[#2D2566] rounded-2xl overflow-hidden shadow-xl flex flex-col">
+                    <div class="bg-slate-100 dark:bg-[#0E0A24] px-4 py-3 border-b border-slate-200 dark:border-[#2D2566] flex items-center justify-between">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+                        </div>
+                        <div class="bg-slate-200 dark:bg-[#221B55] text-slate-700 dark:text-coolgray text-[11px] font-mono px-4 py-1 rounded-md border border-slate-300 dark:border-subtleborder/50 flex items-center gap-2 max-w-xs truncate">
+                            <i data-lucide="lock" class="w-3 h-3 text-emerald-500 shrink-0"></i>
+                            <span class="truncate">https://veloce.ali5.digital/configurator</span>
+                        </div>
+                        <div class="w-12"></div>
+                    </div>
+                    <div class="aspect-[16/9] bg-slate-900 relative overflow-hidden group">
+                        <img src="./images/projects/project-04.jpg" alt="Veloce Performance Motors" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80'">
+                        <div class="absolute top-3 left-3 flex items-center gap-2">
+                            <span class="bg-slate-900/90 text-white text-[10px] font-mono font-bold tracking-widest px-2.5 py-1 rounded uppercase backdrop-blur-sm">DEMO</span>
+                            <span class="bg-teal-500/90 text-midnight text-[10px] font-mono font-bold tracking-widest px-2.5 py-1 rounded uppercase backdrop-blur-sm">AUTOMOTIVE</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-6">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-heading font-extrabold text-2xl text-slate-900 dark:text-softwhite">Veloce Performance Motors</h4>
+                                <span class="text-xs font-mono text-cyan-600 dark:text-cyanaccent font-semibold">EST. 2025</span>
+                            </div>
+                            <p class="text-slate-600 dark:text-coolgray text-sm leading-relaxed">
+                                Exotic vehicle dealership showcase featuring an interactive 360-degree render viewer, paint/caliper configuration preview, and private allocation funnel.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200 dark:border-[#2D2566] flex items-center justify-between font-mono text-xs font-bold">
+                            <a href="https://example.com/veloce-performance-motors" target="_blank" rel="noopener" class="px-4 py-2 rounded-lg bg-slate-200 dark:bg-[#221B55] text-slate-900 dark:text-softwhite hover:bg-slate-300 dark:hover:bg-[#2D2566] transition-colors flex items-center gap-1.5 uppercase">
+                                VIEW PROJECT →
+                            </a>
+                            <a href="https://example.com/veloce-performance-motors" target="_blank" rel="noopener" class="text-cyan-600 dark:text-cyanaccent hover:underline flex items-center gap-1.5 uppercase">
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> VISIT SITE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Nexus Consulting Group -->
+                <div class="project-card business bg-white dark:bg-[#181240] border border-slate-200 dark:border-[#2D2566] rounded-2xl overflow-hidden shadow-xl flex flex-col">
+                    <div class="bg-slate-100 dark:bg-[#0E0A24] px-4 py-3 border-b border-slate-200 dark:border-[#2D2566] flex items-center justify-between">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+                        </div>
+                        <div class="bg-slate-200 dark:bg-[#221B55] text-slate-700 dark:text-coolgray text-[11px] font-mono px-4 py-1 rounded-md border border-slate-300 dark:border-subtleborder/50 flex items-center gap-2 max-w-xs truncate">
+                            <i data-lucide="lock" class="w-3 h-3 text-emerald-500 shrink-0"></i>
+                            <span class="truncate">https://nexus-group.ali5.digital/home</span>
+                        </div>
+                        <div class="w-12"></div>
+                    </div>
+                    <div class="aspect-[16/9] bg-slate-900 relative overflow-hidden group">
+                        <img src="./images/projects/project-01.jpg" alt="Nexus Consulting Group" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80'">
+                        <div class="absolute top-3 left-3 flex items-center gap-2">
+                            <span class="bg-slate-900/90 text-white text-[10px] font-mono font-bold tracking-widest px-2.5 py-1 rounded uppercase backdrop-blur-sm">DEMO</span>
+                            <span class="bg-cyan-500/90 text-midnight text-[10px] font-mono font-bold tracking-widest px-2.5 py-1 rounded uppercase backdrop-blur-sm">BUSINESS</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-6">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-heading font-extrabold text-2xl text-slate-900 dark:text-softwhite">Nexus Consulting Group</h4>
+                                <span class="text-xs font-mono text-cyan-600 dark:text-cyanaccent font-semibold">EST. 2025</span>
+                            </div>
+                            <p class="text-slate-600 dark:text-coolgray text-sm leading-relaxed">
+                                Corporate consulting website with service pages, team profiles, case study library, and a streamlined consultation booking flow.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200 dark:border-[#2D2566] flex items-center justify-between font-mono text-xs font-bold">
+                            <a href="https://example.com/nexus-consulting-group" target="_blank" rel="noopener" class="px-4 py-2 rounded-lg bg-slate-200 dark:bg-[#221B55] text-slate-900 dark:text-softwhite hover:bg-slate-300 dark:hover:bg-[#2D2566] transition-colors flex items-center gap-1.5 uppercase">
+                                VIEW PROJECT →
+                            </a>
+                            <a href="https://example.com/nexus-consulting-group" target="_blank" rel="noopener" class="text-cyan-600 dark:text-cyanaccent hover:underline flex items-center gap-1.5 uppercase">
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> VISIT SITE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Urbanline Fashion Store -->
+                <div class="project-card ecommerce bg-white dark:bg-[#181240] border border-slate-200 dark:border-[#2D2566] rounded-2xl overflow-hidden shadow-xl flex flex-col">
+                    <div class="bg-slate-100 dark:bg-[#0E0A24] px-4 py-3 border-b border-slate-200 dark:border-[#2D2566] flex items-center justify-between">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+                        </div>
+                        <div class="bg-slate-200 dark:bg-[#221B55] text-slate-700 dark:text-coolgray text-[11px] font-mono px-4 py-1 rounded-md border border-slate-300 dark:border-subtleborder/50 flex items-center gap-2 max-w-xs truncate">
+                            <i data-lucide="lock" class="w-3 h-3 text-emerald-500 shrink-0"></i>
+                            <span class="truncate">https://urbanline.ali5.digital/shop</span>
+                        </div>
+                        <div class="w-12"></div>
+                    </div>
+                    <div class="aspect-[16/9] bg-slate-900 relative overflow-hidden group">
+                        <img src="./images/projects/project-02.jpg" alt="Urbanline Fashion Store" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80'">
+                        <div class="absolute top-3 left-3 flex items-center gap-2">
+                            <span class="bg-slate-900/90 text-white text-[10px] font-mono font-bold tracking-widest px-2.5 py-1 rounded uppercase backdrop-blur-sm">DEMO</span>
+                            <span class="bg-teal-500/90 text-midnight text-[10px] font-mono font-bold tracking-widest px-2.5 py-1 rounded uppercase backdrop-blur-sm">E-COMMERCE</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-6">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-heading font-extrabold text-2xl text-slate-900 dark:text-softwhite">Urbanline Fashion Store</h4>
+                                <span class="text-xs font-mono text-cyan-600 dark:text-cyanaccent font-semibold">EST. 2025</span>
+                            </div>
+                            <p class="text-slate-600 dark:text-coolgray text-sm leading-relaxed">
+                                Mobile-first online fashion store with product catalog, category filters, cart and secure checkout, and an admin dashboard for managing orders.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200 dark:border-[#2D2566] flex items-center justify-between font-mono text-xs font-bold">
+                            <a href="https://example.com/urbanline-fashion-store" target="_blank" rel="noopener" class="px-4 py-2 rounded-lg bg-slate-200 dark:bg-[#221B55] text-slate-900 dark:text-softwhite hover:bg-slate-300 dark:hover:bg-[#2D2566] transition-colors flex items-center gap-1.5 uppercase">
+                                VIEW PROJECT →
+                            </a>
+                            <a href="https://example.com/urbanline-fashion-store" target="_blank" rel="noopener" class="text-cyan-600 dark:text-cyanaccent hover:underline flex items-center gap-1.5 uppercase">
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> VISIT SITE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="portfolio.html" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-slate-200 dark:bg-deepslate border border-slate-300 dark:border-subtleborder text-slate-900 dark:text-softwhite font-bold text-sm hover:border-cyanaccent transition-all">
+                    View All 4 Project Deployments <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW WE WORK -->
+    <section id="process" class="py-20 bg-slate-100 dark:bg-deepslate/30 border-t border-slate-200 dark:border-subtleborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-xs font-bold tracking-widest text-cyan-600 dark:text-cyanaccent uppercase">Our Process</h2>
+                <h3 class="font-heading text-3xl font-bold text-slate-900 dark:text-softwhite">How We Work</h3>
+                <p class="text-slate-600 dark:text-coolgray text-sm">A simple, transparent process that keeps your project on time and on budget.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white dark:bg-midnight border border-slate-200 dark:border-subtleborder rounded-2xl p-7 hover:border-cyanaccent/50 transition-all shadow-sm space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-xl bg-cyanaccent/10 text-cyan-600 dark:text-cyanaccent flex items-center justify-center">
+                            <i data-lucide="search" class="w-6 h-6"></i>
+                        </div>
+                        <span class="font-mono text-3xl font-bold text-slate-300 dark:text-subtleborder">01</span>
+                    </div>
+                    <h4 class="font-heading text-lg font-bold text-slate-900 dark:text-softwhite">Discovery</h4>
+                    <p class="text-slate-600 dark:text-coolgray text-sm leading-relaxed">We start by understanding your business, your audience, and your goals, then agree on scope, timeline, and budget.</p>
+                </div>
+                <div class="bg-white dark:bg-midnight border border-slate-200 dark:border-subtleborder rounded-2xl p-7 hover:border-cyanaccent/50 transition-all shadow-sm space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-xl bg-cyanaccent/10 text-cyan-600 dark:text-cyanaccent flex items-center justify-center">
+                            <i data-lucide="pen-tool" class="w-6 h-6"></i>
+                        </div>
+                        <span class="font-mono text-3xl font-bold text-slate-300 dark:text-subtleborder">02</span>
+                    </div>
+                    <h4 class="font-heading text-lg font-bold text-slate-900 dark:text-softwhite">Design</h4>
+                    <p class="text-slate-600 dark:text-coolgray text-sm leading-relaxed">We craft a clean, on-brand layout for desktop and mobile and share it with you for feedback before any code is written.</p>
+                </div>
+                <div class="bg-white dark:bg-midnight border border-slate-200 dark:border-subtleborder rounded-2xl p-7 hover:border-cyanaccent/50 transition-all shadow-sm space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-xl bg-cyanaccent/10 text-cyan-600 dark:text-cyanaccent flex items-center justify-center">
+                            <i data-lucide="code-2" class="w-6 h-6"></i>
+                        </div>
+                        <span class="font-mono text-3xl font-bold text-slate-300 dark:text-subtleborder">03</span>
+                    </div>
+                    <h4 class="font-heading text-lg font-bold text-slate-900 dark:text-softwhite">Development</h4>
+                    <p class="text-slate-600 dark:text-coolgray text-sm leading-relaxed">We build your site with clean, maintainable code, connect your forms, content, and payments, and test on every device.</p>
+                </div>
+                <div class="bg-white dark:bg-midnight border border-slate-200 dark:border-subtleborder rounded-2xl p-7 hover:border-cyanaccent/50 transition-all shadow-sm space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="w-12 h-12 rounded-xl bg-cyanaccent/10 text-cyan-600 dark:text-cyanaccent flex items-center justify-center">
+                            <i data-lucide="rocket" class="w-6 h-6"></i>
+                        </div>
+                        <span class="font-mono text-3xl font-bold text-slate-300 dark:text-subtleborder">04</span>
+                    </div>
+                    <h4 class="font-heading text-lg font-bold text-slate-900 dark:text-softwhite">Launch & Support</h4>
+                    <p class="text-slate-600 dark:text-coolgray text-sm leading-relaxed">We deploy your site, train you to manage it, and stay on hand with 30 days of free post-launch bug fixes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS (REPLACE WITH REAL CLIENT REVIEWS) -->
+    <section id="testimonials" class="py-20 border-t border-slate-200 dark:border-subtleborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-xs font-bold tracking-widest text-cyan-600 dark:text-cyanaccent uppercase">Testimonials</h2>
+                <h3 class="font-heading text-3xl font-bold text-slate-900 dark:text-softwhite">What Our Clients Say</h3>
+                <p class="text-slate-600 dark:text-coolgray text-sm">Feedback from the businesses we have built digital experiences for.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white dark:bg-midnight border border-slate-200 dark:border-subtleborder rounded-2xl p-7 shadow-sm flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-1 text-gold"><i data-lucide="star" class="w-4 h-4 fill-gold"></i><i data-lucide="star" class="w-4 h-4 fill-gold"></i><i data-lucide="star" class="w-4 h-4 fill-gold"></i><i data-lucide="star" class="w-4 h-4 fill-gold"></i><i data-lucide="star" class="w-4 h-4 fill-gold"></i></div>
+                        <p class="text-slate-600 dark:text-coolgray text-sm leading-relaxed">“They understood exactly what our business needed and delivered a website that looks premium and loads fast. We started getting inquiries within the first week.”</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-200 dark:border-subtleborder">
+                        <div class="w-10 h-10 rounded-full bg-cyanaccent/10 border border-cyanaccent/30 text-cyan-600 dark:text-cyanaccent flex items-center justify-center font-heading font-bold text-sm">CN</div>
+                        <div>
+                            <span class="block text-sm font-bold text-slate-900 dark:text-softwhite">Client Name</span>
+                            <span class="block text-xs text-slate-500 dark:text-coolgray">Business Owner</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-midnight border border-slate-200 dark:border-subtleborder rounded-2xl p-7 shadow-sm flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-1 text-gold"><i data-lucide="star" class="w-4 h-4 fill-gold"></i><i data-lucide="star" class="w-4 h-4 fill-gold"></i><i data-lucide="star" class="w-4 h-4 fill-gold"></i><i data-lucide="star" class="w-4 h-4 fill-gold"></i><i data-lucide="star" class="w-4 h-4 fill-gold"></i></div>
+                        <p class="text-slate-600 dark:text-coolgray text-sm leading-relaxed">“Communication was clear from start to finish. Our online store was ready on time, and managing products and orders is now simple.”</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-200 dark:border-subtleborder">
+                        <div class="w-10 h-10 rounded-full bg-cyanaccent/10 border border-cyanaccent/30 text-cyan-600 dark:text-cyanaccent flex items-center justify-center font-heading font-bold text-sm">CN</div>
+                        <div>
+                            <span class="block text-sm font-bold text-slate-900 dark:text-softwhite">Client Name</span>
+                            <span class="block text-xs text-slate-500 dark:text-coolgray">E-commerce Store Owner</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-midnight border border-slate-200 dark:border-subtleborder rounded-2xl p-7 shadow-sm flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-1 text-gold"><i data-lucide="star" class="w-4 h-4 fill-gold"></i><i data-lucide="star" class="w-4 h-4 fill-gold"></i><i data-lucide="star" class="w-4 h-4 fill-gold"></i><i data-lucide="star" class="w-4 h-4 fill-gold"></i><i data-lucide="star" class="w-4 h-4 fill-gold"></i></div>
+                        <p class="text-slate-600 dark:text-coolgray text-sm leading-relaxed">“Professional, responsive, and detail-oriented. The team handled everything from design to launch and kept us updated at every step.”</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-200 dark:border-subtleborder">
+                        <div class="w-10 h-10 rounded-full bg-cyanaccent/10 border border-cyanaccent/30 text-cyan-600 dark:text-cyanaccent flex items-center justify-center font-heading font-bold text-sm">CN</div>
+                        <div>
+                            <span class="block text-sm font-bold text-slate-900 dark:text-softwhite">Client Name</span>
+                            <span class="block text-xs text-slate-500 dark:text-coolgray">Company Director</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="py-20 bg-slate-100 dark:bg-deepslate/30 border-t border-slate-200 dark:border-subtleborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-xs font-bold tracking-widest text-cyan-600 dark:text-cyanaccent uppercase">Packages</h2>
+                <h3 class="font-heading text-3xl font-bold text-slate-900 dark:text-softwhite">Simple, Transparent Pricing</h3>
+                <p class="text-slate-600 dark:text-coolgray text-sm">Choose a starting point. Every project is quoted around your exact requirements.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                <div class="relative bg-white dark:bg-midnight border border-slate-200 dark:border-subtleborder shadow-sm rounded-2xl p-8 flex flex-col space-y-6">
+                    <div class="space-y-2">
+                        <h4 class="font-heading text-xl font-bold text-slate-900 dark:text-softwhite">Starter</h4>
+                        <p class="text-slate-600 dark:text-coolgray text-sm leading-relaxed">Perfect for landing pages, portfolios, and small businesses getting online.</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-mono text-slate-500 dark:text-coolgray uppercase tracking-wider block">Starting from</span>
+                        <span class="font-heading text-4xl font-extrabold text-slate-900 dark:text-softwhite">₦150,000</span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-600 dark:text-coolgray flex-1">
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-cyan-600 dark:text-cyanaccent"></i> Up to 3 responsive pages</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-cyan-600 dark:text-cyanaccent"></i> Contact form & WhatsApp chat</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-cyan-600 dark:text-cyanaccent"></i> Basic SEO setup</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-cyan-600 dark:text-cyanaccent"></i> 30 days free bug-fix support</li>
+                    </ul>
+                    <a href="#contact" class="block text-center w-full py-3 rounded-xl bg-gold text-midnight font-bold text-sm hover:bg-gold/90 transition-all shadow-lg shadow-gold/15">
+                        Get a Quote
+                    </a>
+                </div>
+                <div class="relative bg-white dark:bg-midnight border border-cyan-600 dark:border-cyanaccent shadow-xl rounded-2xl p-8 flex flex-col space-y-6">
+                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-cyanaccent text-midnight text-[10px] font-mono font-bold tracking-widest uppercase">Most Popular</span>
+                    <div class="space-y-2">
+                        <h4 class="font-heading text-xl font-bold text-slate-900 dark:text-softwhite">Business</h4>
+                        <p class="text-slate-600 dark:text-coolgray text-sm leading-relaxed">A complete website for growing companies that want to stand out.</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-mono text-slate-500 dark:text-coolgray uppercase tracking-wider block">Starting from</span>
+                        <span class="font-heading text-4xl font-extrabold text-slate-900 dark:text-softwhite">₦350,000</span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-600 dark:text-coolgray flex-1">
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-cyan-600 dark:text-cyanaccent"></i> Up to 8 custom-designed pages</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-cyan-600 dark:text-cyanaccent"></i> WordPress CMS you can edit yourself</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-cyan-600 dark:text-cyanaccent"></i> Blog & speed optimization</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-cyan-600 dark:text-cyanaccent"></i> SEO-ready structure</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-cyan-600 dark:text-cyanaccent"></i> 30 days free bug-fix support</li>
+                    </ul>
+                    <a href="#contact" class="block text-center w-full py-3 rounded-xl bg-gold text-midnight font-bold text-sm hover:bg-gold/90 transition-all shadow-lg shadow-gold/15">
+                        Get a Quote
+                    </a>
+                </div>
+                <div class="relative bg-white dark:bg-midnight border border-slate-200 dark:border-subtleborder shadow-sm rounded-2xl p-8 flex flex-col space-y-6">
+                    <div class="space-y-2">
+                        <h4 class="font-heading text-xl font-bold text-slate-900 dark:text-softwhite">Store & Custom</h4>
+                        <p class="text-slate-600 dark:text-coolgray text-sm leading-relaxed">Online stores and custom web applications built around your workflow.</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-mono text-slate-500 dark:text-coolgray uppercase tracking-wider block">Starting from</span>
+                        <span class="font-heading text-4xl font-extrabold text-slate-900 dark:text-softwhite">₦750,000</span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-600 dark:text-coolgray flex-1">
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-cyan-600 dark:text-cyanaccent"></i> WooCommerce, Shopify, or custom build</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-cyan-600 dark:text-cyanaccent"></i> Secure checkout & payment integration</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-cyan-600 dark:text-cyanaccent"></i> Product & order management dashboard</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-cyan-600 dark:text-cyanaccent"></i> Laravel / React web app options</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 mt-0.5 shrink-0 text-cyan-600 dark:text-cyanaccent"></i> 30 days free bug-fix support</li>
+                    </ul>
+                    <a href="#contact" class="block text-center w-full py-3 rounded-xl bg-gold text-midnight font-bold text-sm hover:bg-gold/90 transition-all shadow-lg shadow-gold/15">
+                        Get a Quote
+                    </a>
+                </div>
+            </div>
+            <p class="text-center text-xs text-slate-500 dark:text-coolgray mt-8">Prices are starting points and the final quote depends on your requirements. Need something different? <a href="#contact" class="text-cyan-600 dark:text-cyanaccent font-semibold hover:underline">Tell us about your project</a>.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 border-t border-slate-200 dark:border-subtleborder">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 space-y-3">
+                <h2 class="text-xs font-bold tracking-widest text-cyan-600 dark:text-cyanaccent uppercase">FAQ</h2>
+                <h3 class="font-heading text-3xl font-bold text-slate-900 dark:text-softwhite">Frequently Asked Questions</h3>
+                <p class="text-slate-600 dark:text-coolgray text-sm">Quick answers to what clients ask us most.</p>
+            </div>
+            <div class="space-y-4">
+                <details class="group bg-white dark:bg-midnight border border-slate-200 dark:border-subtleborder rounded-2xl px-6 py-5 shadow-sm">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-heading font-bold text-slate-900 dark:text-softwhite">
+                        How long does it take to build a website?
+                        <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-cyan-600 dark:text-cyanaccent transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="mt-3 text-slate-600 dark:text-coolgray text-sm leading-relaxed">Most landing pages and small business sites take 1–2 weeks, while larger business sites and online stores usually take 3–6 weeks. We confirm the exact timeline during discovery, and it depends on how quickly feedback and content reach us.</p>
+                </details>
+                <details class="group bg-white dark:bg-midnight border border-slate-200 dark:border-subtleborder rounded-2xl px-6 py-5 shadow-sm">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-heading font-bold text-slate-900 dark:text-softwhite">
+                        How much does a website cost?
+                        <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-cyan-600 dark:text-cyanaccent transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="mt-3 text-slate-600 dark:text-coolgray text-sm leading-relaxed">Our packages start from ₦150,000 for a Starter site. The final price depends on the number of pages, features, and integrations you need. Send us your requirements and we will give you a clear quote.</p>
+                </details>
+                <details class="group bg-white dark:bg-midnight border border-slate-200 dark:border-subtleborder rounded-2xl px-6 py-5 shadow-sm">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-heading font-bold text-slate-900 dark:text-softwhite">
+                        How does payment work?
+                        <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-cyan-600 dark:text-cyanaccent transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="mt-3 text-slate-600 dark:text-coolgray text-sm leading-relaxed">We agree on the full price before starting. Projects are typically split into milestone payments, with a deposit to begin and the balance due before the final handover.</p>
+                </details>
+                <details class="group bg-white dark:bg-midnight border border-slate-200 dark:border-subtleborder rounded-2xl px-6 py-5 shadow-sm">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-heading font-bold text-slate-900 dark:text-softwhite">
+                        Will I own my website after it is completed?
+                        <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-cyan-600 dark:text-cyanaccent transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="mt-3 text-slate-600 dark:text-coolgray text-sm leading-relaxed">Yes. Once the project is fully paid, all code, design assets, and custom components belong entirely to you.</p>
+                </details>
+                <details class="group bg-white dark:bg-midnight border border-slate-200 dark:border-subtleborder rounded-2xl px-6 py-5 shadow-sm">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-heading font-bold text-slate-900 dark:text-softwhite">
+                        Do you help with domain name and hosting?
+                        <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-cyan-600 dark:text-cyanaccent transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="mt-3 text-slate-600 dark:text-coolgray text-sm leading-relaxed">Yes. We can register your domain, set up reliable hosting, and configure professional email so that your site is live and ready.</p>
+                </details>
+                <details class="group bg-white dark:bg-midnight border border-slate-200 dark:border-subtleborder rounded-2xl px-6 py-5 shadow-sm">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-heading font-bold text-slate-900 dark:text-softwhite">
+                        What happens after my website goes live?
+                        <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-cyan-600 dark:text-cyanaccent transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="mt-3 text-slate-600 dark:text-coolgray text-sm leading-relaxed">Every project includes a 30-day post-launch bug-fix guarantee. After that, we offer optional maintenance plans for updates, backups, and security.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 bg-slate-100 dark:bg-deepslate/30 border-t border-slate-200 dark:border-subtleborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <h2 class="text-xs font-bold tracking-widest text-cyan-600 dark:text-cyanaccent uppercase">Get In Touch</h2>
+                    <h3 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-softwhite">Have a Website Project in Mind?</h3>
+                    <p class="text-slate-600 dark:text-coolgray text-sm leading-relaxed">
+                        Tell us what you want to build, and let's explore how to bring your idea to life with professional web development.
+                    </p>
+
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-deepslate border border-slate-200 dark:border-subtleborder shadow-sm">
+                            <div class="w-10 h-10 rounded-lg bg-cyanaccent/10 text-cyan-600 dark:text-cyanaccent flex items-center justify-center">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 dark:text-coolgray block">Direct Email</span>
+                                <a href="mailto:info@ali5-solutions.com.ng" class="text-slate-900 dark:text-softwhite font-medium text-sm hover:text-cyan-600 dark:hover:text-cyanaccent">info@ali5-solutions.com.ng</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-deepslate border border-slate-200 dark:border-subtleborder shadow-sm">
+                            <div class="w-10 h-10 rounded-lg bg-cyanaccent/10 text-cyan-600 dark:text-cyanaccent flex items-center justify-center">
+                                <i data-lucide="message-square" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 dark:text-coolgray block">WhatsApp Chat</span>
+                                <a href="https://wa.me/2349013787706" target="_blank" rel="noopener" class="text-slate-900 dark:text-softwhite font-medium text-sm hover:text-cyan-600 dark:hover:text-cyanaccent">09013787706</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-white dark:bg-deepslate border border-slate-200 dark:border-subtleborder rounded-2xl p-8 shadow-xl">
+                    <form id="inquiry-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 dark:text-coolgray uppercase mb-2">Your Name *</label>
+                                <input type="text" id="name" required class="w-full bg-slate-50 dark:bg-midnight border border-slate-300 dark:border-subtleborder rounded-xl px-4 py-3 text-slate-900 dark:text-softwhite text-sm focus:outline-none focus:border-cyanaccent transition-colors" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 dark:text-coolgray uppercase mb-2">Your Email *</label>
+                                <input type="email" id="email" required class="w-full bg-slate-50 dark:bg-midnight border border-slate-300 dark:border-subtleborder rounded-xl px-4 py-3 text-slate-900 dark:text-softwhite text-sm focus:outline-none focus:border-cyanaccent transition-colors" placeholder="john@example.com">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 dark:text-coolgray uppercase mb-2">Project Type</label>
+                                <select id="project-type" class="w-full bg-slate-50 dark:bg-midnight border border-slate-300 dark:border-subtleborder rounded-xl px-4 py-3 text-slate-900 dark:text-softwhite text-sm focus:outline-none focus:border-cyanaccent transition-colors">
+                                    <option value="business">Business Website</option>
+                                    <option value="ecommerce">E-commerce Store</option>
+                                    <option value="wordpress">WordPress & CMS</option>
+                                    <option value="webapp">Landing Page / Web App</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 dark:text-coolgray uppercase mb-2">Budget Range</label>
+                                <select id="budget" class="w-full bg-slate-50 dark:bg-midnight border border-slate-300 dark:border-subtleborder rounded-xl px-4 py-3 text-slate-900 dark:text-softwhite text-sm focus:outline-none focus:border-cyanaccent transition-colors">
+                                    <optgroup label="Naira (₦)">
+                                        <option value="ngn-starter">₦150,000 - ₦500,000</option>
+                                        <option value="ngn-growth">₦500,000 - ₦1,500,000</option>
+                                        <option value="ngn-enterprise">₦1,500,000+</option>
+                                    </optgroup>
+                                    <optgroup label="US Dollars ($)">
+                                        <option value="standard">$1,000 - $3,000</option>
+                                        <option value="growth">$3,000 - $6,000</option>
+                                        <option value="enterprise">$6,000+</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 dark:text-coolgray uppercase mb-2">Project Details *</label>
+                            <textarea id="message" rows="4" required class="w-full bg-slate-50 dark:bg-midnight border border-slate-300 dark:border-subtleborder rounded-xl px-4 py-3 text-slate-900 dark:text-softwhite text-sm focus:outline-none focus:border-cyanaccent transition-colors resize-none" placeholder="Describe your business, goals, and any specific requirements..."></textarea>
+                        </div>
+
+                        <button type="submit" id="inquiry-submit" class="w-full py-3.5 rounded-xl bg-gold text-midnight font-bold text-sm hover:bg-gold/90 transition-all shadow-lg shadow-gold/15 flex items-center justify-center gap-2">
+                            Send Project Inquiry <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+
+                        <p id="form-notice" class="text-xs text-center text-slate-500 dark:text-coolgray hidden">
+                            ✨ Thank you! Your inquiry has been sent. We'll get back to you shortly.
+                        </p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (MATCHING REFERENCE LAYOUT) -->
+    <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 border-t border-[#2D2566]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            
+            <!-- TOP BANNER ROW -->
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between pb-12 border-b border-slate-800 gap-6">
+                <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
+                    Let's <span class="text-cyanaccent">Connect</span>
+                </h2>
+                <a href="contact.html" class="inline-flex items-center gap-3 bg-gold text-midnight px-6 py-3.5 rounded-full font-bold text-sm hover:bg-gold/90 transition-all shadow-lg shadow-gold/20">
+                    <span>Contact Us</span>
+                    <div class="w-7 h-7 rounded-full bg-midnight text-gold flex items-center justify-center">
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 4-COLUMN FOOTER BODY -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-12 border-b border-slate-800">
+                
+               <!-- Col 1: Brand, Bio & Visible Social Icons (TikTok & Facebook) -->
+                <div class="lg:col-span-4 space-y-4">
+                    <!-- Footer Logo Only -->
+                    <a href="index.html" class="inline-block group">
+                        <img src="./images/ali5footerlogo.jpg" alt="ALI5 SOLUTIONS logo" class="h-15 sm:h-20 w-auto object-contain group-hover:scale-105 transition-transform" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span class="font-heading font-extrabold text-xl tracking-tight text-white" style="display:none">ALI5 SOLUTIONS</span>
+                    </a>
+
+                    <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+                        We're ALI5 SOLUTIONS — a team of professional web developers & digital solutions architects passionate about creating intuitive digital experiences that blend aesthetics with functionality.
+                    </p>
+
+                    <!-- Visible Social Icons: TikTok & Facebook Only -->
+                    <div class="flex items-center gap-3 pt-2">
+                        <!-- Facebook -->
+                        <a href="https://facebook.com" target="_blank" class="w-10 h-10 rounded-full bg-cyanaccent text-midnight flex items-center justify-center hover:scale-110 transition-transform shadow-md" title="Facebook">
+                            <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
+                        </a>
+                        <!-- TikTok -->
+                        <a href="https://tiktok.com" target="_blank" class="w-10 h-10 rounded-full bg-cyanaccent text-midnight flex items-center justify-center hover:scale-110 transition-transform shadow-md" title="TikTok">
+                            <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <div class="lg:col-span-2 space-y-4">
+                    <h4 class="font-heading font-bold text-sm text-cyanaccent uppercase tracking-wider">Navigation</h4>
+                    <ul class="space-y-2.5 text-xs font-medium text-slate-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="portfolio.html" class="hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contact Info -->
+                <div class="lg:col-span-3 space-y-4">
+                    <h4 class="font-heading font-bold text-sm text-cyanaccent uppercase tracking-wider">Contact</h4>
+                    <ul class="space-y-2.5 text-xs text-slate-400">
+                        <li>07078676511</li>
+                        <li>www.ali5digital.com</li>
+                        <li>info@ali5-solutions.com.ng</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Footer Contact Form -->
+                <div class="lg:col-span-3 space-y-4">
+                    <h4 class="font-heading font-bold text-sm text-cyanaccent uppercase tracking-wider">Quick Message</h4>
+                    <form onsubmit="handleQuickSubmit(event)" class="space-y-2.5">
+                        <input type="text" name="name" placeholder="Your Name" required class="w-full bg-slate-800 border border-slate-700 text-white text-xs px-3 py-2 rounded-lg focus:outline-none focus:border-cyanaccent">
+                        <input type="email" name="email" placeholder="Your Email" required class="w-full bg-slate-800 border border-slate-700 text-white text-xs px-3 py-2 rounded-lg focus:outline-none focus:border-cyanaccent">
+                        <textarea name="message" placeholder="Your Message" rows="2" required class="w-full bg-slate-800 border border-slate-700 text-white text-xs px-3 py-2 rounded-lg focus:outline-none focus:border-cyanaccent resize-none"></textarea>
+                        <button type="submit" class="w-full py-2 rounded-lg bg-gold text-midnight font-bold text-xs hover:bg-gold/90 transition-all flex items-center justify-center gap-1.5 uppercase">
+                            <span>Send</span> <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- BOTTOM COPYRIGHT & LEGAL BAR -->
+            <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4 pt-2">
+                <p>&copy; <span id="current-year"></span> ALI5 SOLUTIONS. All Rights Reserved.</p>
+                <div class="flex items-center gap-4">
+                    <button onclick="openModal('terms-modal')" class="hover:text-cyanaccent transition-colors underline">User Terms & Conditions</button>
+                    <span>|</span>
+                    <button onclick="openModal('privacy-modal')" class="hover:text-cyanaccent transition-colors underline">Privacy Policy</button>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- TERMS OF SERVICE MODAL -->
+    <div id="terms-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-deepslate border border-slate-200 dark:border-subtleborder rounded-3xl max-w-xl w-full p-8 relative shadow-2xl space-y-4 max-h-[85vh] overflow-y-auto">
+            <button onclick="closeModal('terms-modal')" class="absolute top-6 right-6 p-2 rounded-full bg-slate-100 dark:bg-midnight text-slate-600 dark:text-coolgray hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-softwhite">User Terms & Conditions</h3>
+            <div class="text-xs text-slate-600 dark:text-coolgray space-y-3 leading-relaxed font-body">
+                <p>Welcome to ALI5 SOLUTIONS. By accessing our website development services, you agree to comply with the following terms:</p>
+                <p><strong>1. Intellectual Property:</strong> Upon full project payment, all code, design assets, and custom components belong entirely to the client.</p>
+                <p><strong>2. Project Timelines:</strong> Estimated development timelines are provided during discovery and are contingent upon timely client feedback and asset submissions.</p>
+                <p><strong>3. Maintenance & Warranty:</strong> Every custom website deployment includes a 30-day post-launch bug fix guarantee.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-200 dark:border-subtleborder text-right">
+                <button onclick="closeModal('terms-modal')" class="px-5 py-2 rounded-xl bg-cyanaccent text-midnight font-bold text-xs uppercase">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRIVACY POLICY MODAL -->
+    <div id="privacy-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-deepslate border border-slate-200 dark:border-subtleborder rounded-3xl max-w-xl w-full p-8 relative shadow-2xl space-y-4 max-h-[85vh] overflow-y-auto">
+            <button onclick="closeModal('privacy-modal')" class="absolute top-6 right-6 p-2 rounded-full bg-slate-100 dark:bg-midnight text-slate-600 dark:text-coolgray hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-softwhite">Privacy Policy</h3>
+            <div class="text-xs text-slate-600 dark:text-coolgray space-y-3 leading-relaxed font-body">
+                <p>At ALI5 SOLUTIONS, your privacy is paramount:</p>
+                <p><strong>1. Data Collection:</strong> We only collect information submitted voluntarily through our project inquiry form (Name, Email, Project Details).</p>
+                <p><strong>2. Usage:</strong> Submitted details are strictly used to correspond regarding website development proposals and project communications.</p>
+                <p><strong>3. Protection:</strong> We never sell, share, or disclose client data to third-party marketing networks.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-200 dark:border-subtleborder text-right">
+                <button onclick="closeModal('privacy-modal')" class="px-5 py-2 rounded-xl bg-cyanaccent text-midnight font-bold text-xs uppercase">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHATSAPP LIVE CHAT BUTTON (BOTTOM RIGHT) -->
+    <a href="https://wa.me/2349013787706?text=Hello%20ALI5%20Solutions%2C%20I%27d%20like%20to%20discuss%20a%20website%20project." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp" title="Chat with us on WhatsApp" class="fixed bottom-5 right-5 z-40 flex items-center gap-2 pl-4 pr-5 py-3 rounded-full bg-[#25D366] text-white font-bold text-sm shadow-xl shadow-black/30 hover:scale-105 transition-transform">
+        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.05 0C5.5 0 .17 5.33.17 11.88c0 2.09.55 4.13 1.59 5.93L0 24l6.35-1.66a11.86 11.86 0 0 0 5.7 1.45h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.23-6.15-3.42-8.43zM12.06 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.77.99 1-3.67-.24-.38a9.88 9.88 0 0 1-1.51-5.27c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.9 7c0 5.46-4.44 9.9-9.86 9.91zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></svg>
+        <span class="hidden sm:inline">Live Chat</span>
+    </a>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Dynamic Copyright Year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Theme Toggle Logic
+        const htmlRoot = document.getElementById('html-root');
+        const themeBtn = document.getElementById('theme-toggle');
+        const mobileThemeBtn = document.getElementById('mobile-theme-toggle');
+
+        function toggleDarkMode() {
+            if (htmlRoot.classList.contains('dark')) {
+                htmlRoot.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                htmlRoot.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        themeBtn.addEventListener('click', toggleDarkMode);
+        mobileThemeBtn.addEventListener('click', toggleDarkMode);
+
+        if (localStorage.getItem('theme') === 'light') {
+            htmlRoot.classList.remove('dark');
+        } else {
+            htmlRoot.classList.add('dark');
+        }
+
+        // PORTFOLIO FILTERING LOGIC
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            let visibleCount = 0;
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-cyanaccent', 'text-midnight');
+                btn.classList.add('bg-slate-200', 'dark:bg-[#221B55]', 'text-slate-700', 'dark:text-coolgray');
+            });
+
+            event.target.classList.remove('bg-slate-200', 'dark:bg-[#221B55]', 'text-slate-700', 'dark:text-coolgray');
+            event.target.classList.add('bg-cyanaccent', 'text-midnight');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.getElementById('project-count').textContent = `${visibleCount} OF ${cards.length}`;
+        }
+
+        // MODAL HELPERS (TERMS & PRIVACY)
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            }
+        }
+
+        // FORM → EMAIL (delivered to info@ali5-solutions.com.ng via FormSubmit)
+        const FORM_ENDPOINT = 'https://formsubmit.co/ajax/info@ali5-solutions.com.ng';
+
+        async function sendToEmail(fields) {
+            const res = await fetch(FORM_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({ ...fields, _template: 'table', _captcha: 'false' })
+            });
+            const data = await res.json().catch(() => ({}));
+            if (!res.ok || data.success === 'false' || data.success === false) {
+                throw new Error(data.message || 'Request failed');
+            }
+        }
+
+        // Main project inquiry form
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('inquiry-form');
+            const btn = document.getElementById('inquiry-submit');
+            const notice = document.getElementById('form-notice');
+            const typeSel = document.getElementById('project-type');
+            const budgetSel = document.getElementById('budget');
+            const originalBtn = btn.innerHTML;
+
+            btn.disabled = true;
+            btn.innerHTML = 'Sending...';
+
+            try {
+                await sendToEmail({
+                    _subject: 'New Project Inquiry — ALI5 SOLUTIONS',
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    project_type: typeSel.options[typeSel.selectedIndex].text,
+                    budget: budgetSel.options[budgetSel.selectedIndex].text,
+                    message: document.getElementById('message').value
+                });
+                notice.textContent = "✨ Thank you! Your inquiry has been sent. We'll get back to you shortly.";
+                form.reset();
+            } catch (err) {
+                notice.textContent = '⚠️ Sorry, your message could not be sent. Please email info@ali5-solutions.com.ng or use WhatsApp.';
+            }
+
+            btn.disabled = false;
+            btn.innerHTML = originalBtn;
+            lucide.createIcons();
+            notice.classList.remove('hidden');
+            setTimeout(() => { notice.classList.add('hidden'); }, 7000);
+        }
+
+        // Footer quick message form
+        async function handleQuickSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const btn = form.querySelector('button[type="submit"]');
+            const originalBtn = btn.innerHTML;
+
+            btn.disabled = true;
+            btn.innerHTML = 'Sending...';
+
+            try {
+                await sendToEmail({
+                    _subject: 'New Quick Message — ALI5 SOLUTIONS',
+                    name: form.elements['name'].value,
+                    email: form.elements['email'].value,
+                    message: form.elements['message'].value
+                });
+                alert('Message sent successfully!');
+                form.reset();
+            } catch (err) {
+                alert('Sorry, your message could not be sent. Please email info@ali5-solutions.com.ng or use WhatsApp.');
+            }
+
+            btn.disabled = false;
+            btn.innerHTML = originalBtn;
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>
